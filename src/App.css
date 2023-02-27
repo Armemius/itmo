@@ -126,6 +126,10 @@
     transition: all 200ms;
 }
 
+.section-grid-element {
+    height: calc(100% - 40px);
+}
+
 .section-grid-element-header {
     display: flex;
     justify-content: center;
@@ -152,7 +156,20 @@
 
 .section-grid-text-element {
     color: var(--itmo-color-dark);
+    text-align: justify;
+    text-justify: inter-word;
     font-size: 22px;
+}
+
+.section-grid-description-element {
+    padding-bottom: 10px;
+}
+
+.section-grid-info-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .section-grid-files-element {
@@ -177,9 +194,13 @@
     padding: 10px 7.5%;
 }
 
-.file-element-logo {
+.ref-element-label {
     font-size: 17px;
     margin-right: 5px;
+}
+
+.ref-element-text {
+    font-size: 22px;
 }
 
 /* Prevents transformation of image, that makes it flick sometimes */
@@ -239,6 +260,14 @@
 
     .section-grid-text-element {
         font-size: 16px;
+    }
+
+    .ref-element-label {
+        font-size: 13px;
+    }
+
+    .ref-element-text {
+        font-size: 18px;
     }
 }
 

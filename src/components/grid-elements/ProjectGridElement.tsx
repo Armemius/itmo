@@ -13,12 +13,14 @@ const ProjectGridElement = (props: ProjectGridElementProps) => {
                 <div className="section-grid-element-header">
                     <h2>{props.header}</h2>
                 </div>
-                <p className="section-grid-text-element">
-                    {props.text}
-                </p>
-                <ul className="section-grid-files-element">
-                    {props.children}
-                </ul>
+                <div className="section-grid-info-container">
+                    <p className="section-grid-text-element section-grid-description-element">
+                        {props.text}
+                    </p>
+                    <ul className="section-grid-files-element">
+                        {props.children}
+                    </ul>
+                </div>
             </div>
         </div>
     );

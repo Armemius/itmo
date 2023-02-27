@@ -4,19 +4,20 @@ interface ReportFileElementProps {
     text: string;
     icon: JSX.Element;
     filepath: string;
+    filename: string;
 }
 
-const ReportFileElement = (props: ReportFileElementProps) => {
+const FileReportElement = (props: ReportFileElementProps) => {
     return (
         <li>
-            <span className="file-element-logo">
+            <span className="ref-element-label">
                 {props.icon}
             </span>
-            <a className="link-text" href={props.filepath} download>
+            <a className="link-text ref-element-text" href={props.filepath} download={props.filename}>
                 {props.text}
             </a>
         </li>
     );
 };
 
-export default ReportFileElement;
+export default FileReportElement;

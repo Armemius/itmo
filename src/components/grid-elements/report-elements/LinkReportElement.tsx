@@ -6,17 +6,17 @@ interface ReportLinkElementProps {
     to: string;
 }
 
-const ReportLinkElement = (props: ReportLinkElementProps) => {
+const LinkReportElement = (props: ReportLinkElementProps) => {
     return (
         <li>
-            <span className="file-element-logo">
+            <span className="ref-element-label">
                 <FaLink/>
             </span>
-            <a className="link-text" href={props.to}>
+            <a className="link-text ref-element-text" href={props.to}>
                 {props.text}
             </a>
         </li>
     );
 };
 
-export default ReportLinkElement;
+export default LinkReportElement;

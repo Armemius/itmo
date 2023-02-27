@@ -1,4 +1,5 @@
 import React from 'react';
+import GridSection from "./grid-elements/GridSection";
 
 interface SubsectionProps {
     header: string;
@@ -13,9 +14,9 @@ const Section = (props: SubsectionProps) => {
                 <div className="section-header">
                     <h1 id={props.anchor}>{props.header}</h1>
                 </div>
-                <div className="section-grid">
+                <GridSection>
                     {props.children}
-                </div>
+                </GridSection>
             </div>
         </>
 

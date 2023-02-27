@@ -9,12 +9,10 @@ const InfoPageTemplate = (props: ProjectPageProps) => {
     return (
         <>
             <div className="info-page-top-section">
-                <h1>{props.header} | <a className="link-text" href="../pages">На главную</a></h1>
+                <h1>{props.header} | <a className="link-text" href="./">На главную</a></h1>
             </div>
             <div className="info-page-content">
-                <div className="section-grid">
-                    {props.children}
-                </div>
+                {props.children}
             </div>
         </>
     );
