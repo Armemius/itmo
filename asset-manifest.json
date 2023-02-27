@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/itmo/static/css/main.90fd593b.css",
-    "main.js": "/itmo/static/js/main.96356929.js",
+    "main.css": "/itmo/static/css/main.374dbc42.css",
+    "main.js": "/itmo/static/js/main.188744ef.js",
     "static/media/rikardo.gif": "/itmo/static/media/rikardo.f0afc16f4c844dc234dd.gif",
+    "static/media/PROG_TEST_2.pdf": "/itmo/static/media/PROG_TEST_2.a2ca8ed29d9f9ae20c85.pdf",
+    "static/media/PROG_TEST_1.pdf": "/itmo/static/media/PROG_TEST_1.b3182f93b9411884273b.pdf",
     "static/media/PROG_LAB_2.docx": "/itmo/static/media/PROG_LAB_2.75097b05190e13a0396f.docx",
     "static/media/PROG_LAB_4.docx": "/itmo/static/media/PROG_LAB_4.26b16581a7e201009ecd.docx",
     "static/media/PROG_LAB_3.docx": "/itmo/static/media/PROG_LAB_3.1364fec1ae127e4811a3.docx",
@@ -18,11 +20,11 @@
     "static/media/Noto Sans 2.woff2": "/itmo/static/media/Noto Sans 2.668fa41f4ecaf0c7ea97.woff2",
     "static/media/Noto Sans 3.woff2": "/itmo/static/media/Noto Sans 3.ac040a06c437eb0c3a58.woff2",
     "index.html": "/itmo/index.html",
-    "main.90fd593b.css.map": "/itmo/static/css/main.90fd593b.css.map",
-    "main.96356929.js.map": "/itmo/static/js/main.96356929.js.map"
+    "main.374dbc42.css.map": "/itmo/static/css/main.374dbc42.css.map",
+    "main.188744ef.js.map": "/itmo/static/js/main.188744ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.90fd593b.css",
-    "static/js/main.96356929.js"
+    "static/css/main.374dbc42.css",
+    "static/js/main.188744ef.js"
   ]
 }
