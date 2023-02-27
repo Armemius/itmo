@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+:root {
+    --itmo-color-light: #ffffff;
+    --itmo-color-dark: #252527;
+    --itmo-color-dark-inactive: #252527cc;
+    --itmo-color-dark-alpha: #25252722;
+    --itmo-color-aux: #6d625c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.w-fill {
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.h-fill {
+    height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-text {
+    color: var(--itmo-color-dark-inactive);
+    transition: 200ms all;
+}
+
+.link-text:hover {
+    color: var(--itmo-color-dark);
+}
+
+.ricardo-background {
+    background-position: center;
+    background-image: url('./resources/rikardo.gif');
+    background-size: cover;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    z-index: -100;
+    position: fixed;
+}
+
+.ricardo-background-filter {
+    background-color: #000000bb;
+    z-index: -90;
+    position: fixed;
+}
+
+.main-header {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--itmo-color-light);
+    color: var(--itmo-color-dark);
+    padding: 10px 0;
+    border-top: var(--itmo-color-dark) solid 5px;
+    border-bottom: var(--itmo-color-dark) solid 5px;
+    box-shadow: 0 0 20px var(--itmo-color-light);
+}
+
+.main-content {
+    width: 90%;
+    padding: 0 5% 5% 5%;
+    background-color: var(--itmo-color-light);
+}
+
+.main-content-header {
+    display: flex;
+    width: 80%;
+    color: var(--itmo-color-light);
+    background-color: var(--itmo-color-dark);
+    box-shadow: 0 0 20px var(--itmo-color-dark);
+    font-size: 65px;
+    padding: 0 10%;
+}
+
+.section {
+    background-color: var(--itmo-color-light);
+}
+
+.section-header {
+    width: 90%;
+    padding: 1% 5%;
+    font-size: 20px;
+    color: var(--itmo-color-dark);
+    border-bottom: 3px solid var(--itmo-color-aux);
+}
+
+.section-grid {
+    --grid-column-count: 3;
+    --grid-item--min-width: 500px;
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --grid-item--max-width: calc(100% / var(--grid-column-count));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+}
+
+.section-grid-element-container {
+    border-radius: 15px;
+    border: 5px solid var(--itmo-color-dark);
+    color: var(--itmo-color-light);
+    font-style: normal;
+    margin: 20px;
+    padding: 20px;
+}
+
+.base-element-container {
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 200ms;
+}
+
+.base-element-container:hover {
+    transform: scale(1.02);
+    background-color: var(--itmo-color-dark-alpha);
+    transition: all 200ms;
+}
+
+.section-grid-element-header {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    color: var(--itmo-color-dark);
+    font-size: 24px;
+}
+
+.section-grid-img-container {
+    margin: 15px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--itmo-color-dark);
+    border-radius: 15px;
+}
+
+.section-grid-img {
+    width: 100%;
+    border-radius: 9px;
+    border: 5px solid var(--itmo-color-dark);
+}
+
+.section-grid-text-element {
+    color: var(--itmo-color-dark);
+    font-size: 22px;
+}
+
+/* Prevents transformation of image, that makes it flick sometimes */
+.anti-flick {
+    -webkit-transform: translateZ(0) !important;
+    -moz-transform: translateZ(0) !important;
+    -ms-transform: translateZ(0) !important;
+    -o-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    -moz-backface-visibility:    hidden !important;
+    -ms-backface-visibility:     hidden !important;
+}
+
+/* For mobile devices */
+@media screen and (max-width: 700px) {
+    /* Main page */
+    .section-grid {
+        --grid-column-count: 1;
+        --grid-item--min-width: 300px;
+
+        --gap-count: calc(var(--grid-column-count) - 1);
+        --grid-item--max-width: calc(100% / var(--grid-column-count));
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    }
+
+    .main-header {
+        font-size: 22px;
+    }
+
+    .main-content-header {
+        font-size: 35px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-grid-element-header {
+        font-size: 20px;
+    }
+
+    .section-grid-element-container {
+        margin: 3%;
+        padding: 3%;
+    }
+
+    .base-element-header {
+        font-size: 16px;
+    }
+
+    .section-header {
+        padding-top: 10px;
+        font-size: 13px;
+    }
+
+    .section-grid-text-element {
+        font-size: 16px;
+    }
 }

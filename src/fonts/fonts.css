@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@font-face {
+    font-family: 'Noto sans';
+    src:  url('./Noto Sans 1.woff2') format('woff2'),
+    url('./Noto Sans 2.woff2') format('woff2'),
+    url('./Noto Sans 3.woff2') format('woff2'),
+    url('./Noto Sans 4.woff2') format('woff2');
+}
