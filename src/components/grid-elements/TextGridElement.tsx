@@ -2,7 +2,7 @@ import React from 'react';
 
 interface TextGridElementProps {
     header: string;
-    text: string;
+    children: string;
 }
 
 const TextGridElement = (props: TextGridElementProps) => {
@@ -13,7 +13,7 @@ const TextGridElement = (props: TextGridElementProps) => {
                     <h2>{props.header}</h2>
                 </div>
                 <p className="section-grid-text-element">
-                    {props.text}
+                    {props.children}
                 </p>
             </div>
         </div>

@@ -44,7 +44,9 @@ const Main = () => {
                     <LinkGridElement header="БЖД" link={Pages.BZD} img={FillerImg} />
                 </Section>
                 <Section header="III Семестр" anchor="sem3">
-                    <TextGridElement header="Будет позже" text="Осталось только дожить до следующего семестра"/>
+                    <TextGridElement header="Будет позже">
+                        Осталось только дожить до следующего семестра
+                    </TextGridElement>
                 </Section>
             </div>
         </>

@@ -93,6 +93,9 @@
     padding: 1% 5%;
     font-size: 20px;
     color: var(--itmo-color-dark);
+}
+
+.section-header.lined-section-header {
     border-bottom: 3px solid var(--itmo-color-aux);
 }
 
