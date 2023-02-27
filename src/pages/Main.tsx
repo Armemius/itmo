@@ -1,16 +1,16 @@
 import React from 'react';
 import getMessage from "../util/GreetMessages";
 import Section from "../components/Section";
-import LinkGridElement from "../components/LinkGridElement";
+import LinkGridElement from "../components/grid-elements/LinkGridElement";
 import {Pages} from "../components/ParamsRouter";
 
-import ProgrammingImg1 from "../resources/programming_1.jpg";
-import OPDImg1 from "../resources/OPD_1.jpg";
-import InformaticsImg from "../resources/informatics.jpg";
-import MathImg1 from "../resources/math_1.jpg";
-import DiskraImg1 from "../resources/diskra_1.jpg";
-import FillerImg from "../resources/filler.jpg";
-import TextGridElement from "../components/TextGridElement";
+import ProgrammingImg1 from "../resources/images/programming_1.jpg";
+import OPDImg1 from "../resources/images/OPD_1.jpg";
+import InformaticsImg from "../resources/images/informatics.jpg";
+import MathImg1 from "../resources/images/math_1.jpg";
+import DiskraImg1 from "../resources/images/diskra_1.jpg";
+import FillerImg from "../resources/images/filler.jpg";
+import TextGridElement from "../components/grid-elements/TextGridElement";
 
 const Main = () => {
     return (

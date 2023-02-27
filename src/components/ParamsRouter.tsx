@@ -20,8 +20,6 @@ export enum Pages {
     BZD = "bzd",
 }
 
-const getLink = (page: Pages) => `./?page=${page.valueOf()}`
-
 const ParamsRouter = () => {
     const params = new URLSearchParams(window.location.search);
     const page = params.get('page');

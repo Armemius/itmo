@@ -11,13 +11,9 @@
 :root {
     --itmo-color-light: #ffffff;
     --itmo-color-dark: #252527;
-    --itmo-color-dark-inactive: #252527cc;
+    --itmo-color-dark-inactive: #252527e0;
     --itmo-color-dark-alpha: #25252722;
     --itmo-color-aux: #6d625c;
-}
-
-body {
-    background-color: black;
 }
 
 .w-fill {
@@ -45,7 +41,7 @@ body {
 
 .ricardo-background {
     background-position: center;
-    background-image: url('./resources/rikardo.gif');
+    background-image: url('resources/images/rikardo.gif');
     background-size: cover;
     background-color: black;
     padding: 0;
@@ -159,6 +155,33 @@ body {
     font-size: 22px;
 }
 
+.section-grid-files-element {
+    color: var(--itmo-color-dark);
+    list-style: none;
+    font-size: 22px;
+}
+
+.info-page-top-section {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    width: 90%;
+    margin: 0 5%;
+    padding: 10px 0;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--itmo-color-aux);
+}
+
+.info-page-content {
+    width: 85%;
+    padding: 10px 7.5%;
+}
+
+.file-element-logo {
+    font-size: 17px;
+    margin-right: 5px;
+}
+
 /* Prevents transformation of image, that makes it flick sometimes */
 .anti-flick {
     -webkit-transform: translateZ(0) !important;
@@ -216,5 +239,17 @@ body {
 
     .section-grid-text-element {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .info-page-top-section {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .info-page-top-section {
+        font-size: 12px;
     }
 }

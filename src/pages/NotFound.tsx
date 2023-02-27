@@ -1,6 +1,4 @@
 import React from 'react';
-import getMessage from "../util/GreetMessages";
-import {Link} from "react-router-dom";
 
 const NotFound = () => {
     return (

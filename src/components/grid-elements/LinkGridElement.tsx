@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pages} from "./ParamsRouter";
+import {Pages} from "../ParamsRouter";
 
 interface LinkGridElementProps {
     header: string;
