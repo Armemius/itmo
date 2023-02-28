@@ -18,7 +18,7 @@ const Programming = () => {
     return (
         <InfoPageTemplate header="Программирование">
             <Section header={"Лабораторные"}>
-                <TextGridElement header="Алярма">
+                <TextGridElement header="Ахтунг">
                     На сдаче лаб вас могут спросить не только определённые классические вопросы для каждой лабы,
                     но и по тому что вы написали в коде или случайно сказали на защите. Из этого следует мораль: фильтруйте базар.
                 </TextGridElement>
@@ -42,7 +42,7 @@ const Programming = () => {
                     <GithubLinkReportElement text={"Ссылка на проект"} to={"https://github.com/Armemius/ItmoProjects/tree/main/programming/lab5"}/>
                 </ProjectGridElement>
             </Section>
-            <Section header="Рубежки">
+            <Section header="Тесты">
                 <ProjectGridElement header={"Рубежка №1"} text={"Вопросы по материалу первой половины семестра: основы работы с Java, её устройство и всякие команды"}>
                     <FileReportElement text={"Примерные вопросы"} icon={<FaFilePdf/>} filepath={Test1} filename="Questions_test_1"/>
                 </ProjectGridElement>

@@ -1,0 +1,247 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx, setspace, amsmath}
+
+
+\usepackage[
+top = 1.25cm,
+bottom = 2.0cm]{geometry}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+    % HEADER
+	{
+        \scshape
+        Федеральное государственное автономное образовательное учреждение высшего образования
+        \par
+        \textbf{«Научно-образовательная корпорация ИТМО»}
+        \par
+        \vspace*{1cm}
+        Факультет Программной Инженерии и Компьютерной Техники
+        \par
+    }
+    % LOGO
+    \vspace*{0.6cm}
+    \includegraphics[width=\textwidth]{logo.png}
+    % LAB INFO
+    {
+        \Large
+        \textbf{Домашняя работа по представлению чисел в ЭВМ №6}
+        \par
+        \normalsize
+        \vspace*{0.75cm}
+        \textbf{Вариант 41}
+        \par
+    }
+    \vfill
+    % СREDITS
+    \hfill\begin{minipage}{\dimexpr\textwidth-7.8cm}
+        \textbf{Выполнил:}\par
+        Степанов Арсений Алексеевич\par
+        \vspace*{0.15cm}
+        \textbf{Группа:}\par
+        P3109\par
+        \vspace*{0.15cm}
+        \textbf{Преподаватель:}\par
+        Поляков Владимир Иванович\par
+    \end{minipage}
+    \vfill
+    Санкт-Петербург, \the\year{}г.
+\end{titlepage}
+\large
+\section*{Значения чисел для данного варианта}
+\onehalfspacing
+$A=9.165_{10}\approx9.2A3D70_{16}=1001.0010\;1010\;0011\;1101\;0111_2$\\
+$A_{F1}=0.1000001.1001\;0010\;1010$\\
+$A_{F2}=0.10000100.0010\;0101\;010$\\
+\hfill\break
+$B=6.842_{10}\approx6.D78D4F_{16}=110.1101\;0111\;1000\;1101\;0100\;1111_2$\\
+$B_{F1}=0.1000001.0110\;1101\;0111$\\
+$B_{F2}=0.10000011.1011\;0101\;111$
+
+\section*{Задание №1}
+\subsection*{Сравнение порядков}
+$X_a=65_{10}=1000001_2$\\
+$X_b=65_{10}=1000001_2$\\
+\hfill\break
+$
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        1000001\\
+        1000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        0000000
+        \end{array}\\
+        \end{array}
+$\\
+\hfill\break
+$X_a-X_b=0$\\
+Разность порядков равна нулю, нормализация не требуется
+\subsubsection*{$A>0, B>0$}
+$
+    \begin{array}{r}
+    +
+    \begin{array}{r}
+    \overset{\small{1}}{0}.\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}10\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    1.000000000001
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=1.0000\;0000\;0001_2$ -- результат денормализован влево\\
+$M_c=0.0001\;0000\;0000_2\cdot 16^1$\\
+$X_c=65+1=66_{10}=1000010_2$\\
+$C=0.1000010.0001\;0000\;0000_{F1}$\\
+$C^*=0.0001_2\cdot16_{10}^2=16_{10}$\\
+$C_T=9.165+6.842=16.007$\\
+$\Delta C=C_T-C^*=0.007$\\
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.04373\%$
+\subsubsection*{$A>0,B<0$}
+$
+    \begin{array}{r}
+    -
+    \begin{array}{r}
+    0.\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}0\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    0.001001010011
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=0.0010\;0101\;0011_2$ -- результат нормализован\\
+$M_c=0.0010\;0101\;0011_2$\\
+$X_c=65+0=65_{10}=1000001_2$\\
+$C=0.1000001.0010\;0101\;0011_{F1}$\\
+$C^*=0.0010\;0101\;0011_2\cdot16_{10}^1=2.32421875_{10}$\\
+$C_T=9.165_{10}-6.842_{10}=2.323_{10}$\\
+$\Delta C=C_T-C^*=-0.00121875$\\
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.05246\%$
+\subsubsection*{$A<0,B>0$}
+$
+    \begin{array}{r}
+    -
+    \begin{array}{r}
+    0.\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}0\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    0.001001010011
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=0.0010\;0101\;0011_2$ -- результат нормализован\\
+$M_c=0.0010\;0101\;0011_2$\\
+$X_c=65+0=65_{10}=1000001_2$\\
+$C=1.1000001.0010\;0101\;0011_{F1}$\\
+$C^*=-1.0010\;0101\;0011_2\cdot16_{10}^1=-2.32421875_{10}$\\
+$C_T=-9.165_{10}+6.842_{10}=-2.323_{10}$\\
+$\Delta C=C_T-C^*=0.00121875$\\
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.05246\%$
+\section*{Задание №2}
+\subsection*{Сравнение порядков}
+$X_a=132_10=10000100_2$\\
+$X_b=131_10=10000011_2$\\
+\hfill\break
+$
+    \begin{array}{r}
+    -
+    \begin{array}{r}
+    10000\overset{\small{1}}{1}\overset{\small{1}}{0}0\\
+    10000011
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    00000001
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$X_a-X_b=1$\\
+Порядок $X_b$ - меньше, сдвигаем $M_b$ вправо на один разряд, таким образом:\\
+$M_a=0.1001\;0010\;1010\cdot2^4$\\
+$M_b=0.0110\;1101\;0111\cdot2^4$
+\subsubsection*{$A>0, B>0$}
+$
+    \begin{array}{r}
+    +
+    \begin{array}{r}
+    \overset{\small{1}}{0}.\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}10\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    1.000000000001
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=1.0000\;0000\;0001_2$ -- результат денормализован влево\\
+$M_c=0.1000\;0000\;0000_2\cdot 2^5$\\
+$X_c=132+1=133_{10}=10000101_2$\\
+$C=0.10000101.0000\;0000\;000_{F2}$\\
+$C^*=0.1000\;0000\;0000_2\cdot2_{10}^5=16_{10}$\\
+$C_T=9.165+6.842=16.007$\\
+$\Delta C=C_T-C^*=0.007$\\
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.04373\%$
+\subsubsection*{$A>0, B<0$}
+$
+    \begin{array}{r}
+    -
+    \begin{array}{r}
+    0.\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}0\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    0.001001010011
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=0.0010\;0101\;0011_2$ -- результат денормализован вправо\\
+$M_c=0.1001\;0100\;1100_2\cdot 2_2^{-2}$\\
+$X_c=132-2=130_{10}=10000010_2$\\
+$C=0.10000010.0010\;1001\;100_{F2}$\\
+$C^*=0.1001\;0100\;1100_2\cdot2_{10}^2=2.32421875_{10}$\\
+$C_T=9.165_{10}-6.842_{10}=2.323_{10}$\\
+$\Delta C=C_T-C^*=-0.00121875$\\
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.05246\%$
+\subsubsection*{$A<0, B>0$}
+$
+    \begin{array}{r}
+    -
+    \begin{array}{r}
+    0.\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}0\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+    0.011011010111
+    \end{array}\\
+    \hline
+    \begin{array}{r}
+    0.001001010011
+    \end{array}\\
+    \end{array}
+$\\
+\hfill\break
+$M_a+M_b=0.0010\;0101\;0011_2$ -- результат денормализован вправо\\
+$M_c=0.1001\;0100\;1100_2\cdot 2_2^{-2}$\\
+$X_c=132-2=130_{10}=10000010_2$\\
+$C=1.10000010.0010\;1001\;100_{F2}$\\
+$C^*=0.1001\;0100\;1100_2\cdot2_{10}^2=2.32421875_{10}$\\
+$C_T=-9.165_{10}+6.842_{10}=-2.323_{10}$\\
+$\Delta C=C_T-C^*=0.00121875$\\ В39
+$\delta C=|\frac{\Delta C}{C_T}|\cdot100\%\approx0.05246\%$
+\end{document}

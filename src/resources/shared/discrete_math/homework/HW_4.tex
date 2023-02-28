@@ -1,0 +1,729 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx, setspace, amsmath}
+
+
+\usepackage[
+top = 1.25cm,
+bottom = 2.0cm]{geometry}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+    % HEADER
+	{
+        \scshape
+        Федеральное государственное автономное образовательное учреждение высшего образования
+        \par
+        \textbf{«Научно-образовательная корпорация ИТМО»}
+        \par
+        \vspace*{1cm}
+        Факультет Программной Инженерии и Компьютерной Техники
+        \par
+    }
+    % LOGO
+    \vspace*{0.6cm}
+    \includegraphics[width=\textwidth]{logo.png}
+    % LAB INFO
+    {
+        \Large
+        \textbf{Домашняя работа по представлению чисел в ЭВМ №4}
+        \par
+        \normalsize
+        \vspace*{0.75cm}
+        \textbf{Вариант 42}
+        \par
+    }
+    \vfill
+    % СREDITS
+    \hfill\begin{minipage}{\dimexpr\textwidth-7.8cm}
+        \textbf{Выполнил:}\par
+        Степанов Арсений Алексеевич\par
+        \vspace*{0.15cm}
+        \textbf{Группа:}\par
+        P3109\par
+        \vspace*{0.15cm}
+        \textbf{Преподаватель:}\par
+        Поляков Владимир Иванович\par
+    \end{minipage}
+    \vfill
+    Санкт-Петербург, \the\year{}г.
+\end{titlepage}
+\section*{Значения чисел для данного варианта}
+\onehalfspacing
+$A=43_{10}=00101011_2$\\
+$-A=-43_{10}=11010101_2$\\
+$B=69_{10}=01000101_2$\\
+$-B=-69_{10}=10111011_2$\\
+\section*{Задание №1}
+$A>0,B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 1
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $0100010\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00101011$\\
+        $00010101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01000101$\\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00001010$ & $11|01000\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00110101$\\
+        $00011010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $11|01000\underline{1}$\\
+        $111|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00001101$ & $0111|010\underline{0}$\\
+    \hline
+    $00000110$ & $10111|01\underline{0}$\\
+    \hline
+    $00000011$ & $010111|0\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00101110$\\
+        $00010111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $010111|0\underline{1}$\\
+        $0010111|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00001011$ & $10010111$\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{dir}=0000101110010111_2=2967_{10}$\\
+\hfill\break
+$A>0,B<0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 2
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $1011101\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00101011$\\
+        $00010101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1011101\underline{1}$\\
+        $1|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $01000000$\\
+        $00100000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1|101110\underline{1}$\\
+        $01|10111\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00010000$ & $001|1011\underline{1}$\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00111011$\\
+        $00011101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $001|1011\underline{1}$\\
+        $1001|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $01001000$\\
+        $00100100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1001|101\underline{1}$\\
+        $01001|10\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $01001111$\\
+        $00100111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01001|10\underline{1}$\\
+        $101001|1\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00010011$ & $1101001|\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00111110$\\
+        $00011111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1101001|\underline{1}$\\
+        $01101001$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11110100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01101001$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{com}=1111010001101001$\\
+$[C]_{com}=-[C]_{dir}=-000101110010111_2=-2967_{10}$\\
+\hfill\break
+$A<0,B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 3
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $0100010\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11010101$\\
+        $11101010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0100010\underline{1}$\\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11110101$ & $01|01000\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11001010$\\
+        $11100101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01|01000\underline{1}$\\
+        $001|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11110010$ & $1001|010\underline{0}$\\
+    \hline
+    $11111001$ & $01001|01\underline{0}$\\
+    \hline
+    $11111100$ & $101001|0\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11010001$\\
+        $11101000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $101001|0\underline{1}$\\
+        $1101001|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11110100$ & $01101001$\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{com}=1111010001101001$\\
+$[C]_{com}=-[C]_{dir}=-000101110010111_2=-2967_{10}$\\
+\hfill\break\hfill\break\hfill\break
+$A<0,B<0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 4
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $1011101\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11010101$\\
+        $11101010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1011101\underline{1}$\\
+        $1|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $10111111$\\
+        $11011111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1|101110\underline{1}$\\
+        $11|10111\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11101111$ & $111|1011\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11000100$\\
+        $11100 010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $111|1011\underline{1}$\\
+        $0111|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $10110111$\\
+        $11011011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0111|101\underline{1}$\\
+        $10111|10\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $10110000$\\
+        $11011000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $10111|10\underline{1}$\\
+        $010111|1\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11101100$ & $0010111|\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11000001$\\
+        $11100000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0010111|\underline{1}$\\
+        $10010111$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00001011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $10010111$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{dir}=0000101110010111_2=2967_{10}$\\
+\section*{Задание №2}
+$A>0,B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 5
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $0100010\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11010101$\\
+        $11101010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0100010\underline{1}$\\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00010101$\\
+        $00001010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1|010001\underline{0}$\\
+        $11|01000\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11011111$\\
+        $11101111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $11|01000\underline{1}$\\
+        $111|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00011010$\\
+        $00001101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $111|0100\underline{0}$\\
+        $0111|010\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $00000110$ & $10111|01\underline{0}$\\
+    \hline
+    $00000011$ & $010111|0\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11011000$\\
+        $11101100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $010111|0\underline{1}$\\
+        $0010111|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00010111$\\
+        $00001011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0010111|\underline{0}$\\
+        $10010111$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{dir}=0000101110010111_2=2967_{10}$\\
+\hfill\break
+$A>0, B<0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 6
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $1011101\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11010101$\\
+        $11101010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1011101\underline{1}$\\
+        $1|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $11110101$ & $01|10111\underline{0}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00100000$\\
+        $00010000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01|10111\underline{0}$\\
+        $001|1011\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11100101$\\
+        $11110010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $001|1011\underline{1}$\\
+        $1001|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $11111001$ & $01001|10\underline{1}$\\
+    \hline
+    $11111100$ & $101001|1\underline{0}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00100111$\\
+        $00010011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $101001|1\underline{0}$\\
+        $1101001|\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11101000$\\
+        $11110100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1101001|\underline{1}$\\
+        $01101001$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{com}=1111010001101001$\\
+$[C]_{com}=-[C]_{dir}=-000101110010111_2=-2967_{10}$\\
+\hfill\break
+$A<0,B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 7
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $0100010\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00101011$\\
+        $00010101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0100010\underline{1}$\\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11101010$\\
+        $11110101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1|010001\underline{0}$\\
+        $01|01000\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00100000$\\
+        $00010000$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $01|01000\underline{1}$\\
+        $001|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11100101$\\
+        $11110010$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $001|0100\underline{0}$\\
+        $1001|010\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $11111001$ & $01001|01\underline{0}$\\
+    \hline
+    $11111100$ & $101001|0\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00100111$\\
+        $00010011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $101001|0\underline{1}$\\
+        $1101001|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11101000$\\
+        $11110100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1101001|\underline{0}$\\
+        $10010111$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{com}=1111010001101001$\\
+$[C]_{com}=-[C]_{dir}=-000101110010111_2=-2967_{10}$\\
+\hfill\break
+$A<0, B<0$\\
+\hfill\break
+\begin{tabular}{|c|c|} % Task 8
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    $00000000$ & $1011101\underline{1}$\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00101011$\\
+        $00010101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $1011101\underline{1}$\\
+        $1|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $00001010$ & $11|10111\underline{0}$\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|} % Task 7
+    \hline
+    СЧП (ст.р.) & Множители и СЧП (мл.р.)\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11011111$\\
+        $11101111$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $11|10111\underline{0}$\\
+        $111|1011\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00011010$\\
+        $00001101$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $111|1011\underline{1}$\\
+        $0111|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $00000110$ & $10111|10\underline{1}$\\
+    \hline
+    $00000011$ & $010111|1\underline{0}$\\
+    \hline
+    \begin{tabular}{c}
+        $11010101$\\
+        \hline
+        $11011000$\\
+        $11101100$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $010111|1\underline{0}$\\
+        $0010111|\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    \begin{tabular}{c}
+        $00101011$\\
+        \hline
+        $00010111$\\
+        $00001011$\\
+    \end{tabular} &
+    \begin{tabular}{c}
+        \\
+        $0010111|\underline{1}$\\
+        $10010111$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C]_{dir}=0000101110010111_2=2967_{10}$\\
+\hfill\break
+\end{document}

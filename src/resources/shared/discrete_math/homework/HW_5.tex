@@ -1,0 +1,818 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx, setspace, amsmath}
+
+
+\usepackage[
+top = 1.25cm,
+bottom = 2.0cm]{geometry}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+    % HEADER
+	{
+        \scshape
+        Федеральное государственное автономное образовательное учреждение высшего образования
+        \par
+        \textbf{«Научно-образовательная корпорация ИТМО»}
+        \par
+        \vspace*{1cm}
+        Факультет Программной Инженерии и Компьютерной Техники
+        \par
+    }
+    % LOGO
+    \vspace*{0.6cm}
+    \includegraphics[width=\textwidth]{logo.png}
+    % LAB INFO
+    {
+        \Large
+        \textbf{Домашняя работа по представлению чисел в ЭВМ №5}
+        \par
+        \normalsize
+        \vspace*{0.75cm}
+        \textbf{Вариант 42}
+        \par
+    }
+    \vfill
+    % СREDITS
+    \hfill\begin{minipage}{\dimexpr\textwidth-7.8cm}
+        \textbf{Выполнил:}\par
+        Степанов Арсений Алексеевич\par
+        \vspace*{0.15cm}
+        \textbf{Группа:}\par
+        P3109\par
+        \vspace*{0.15cm}
+        \textbf{Преподаватель:}\par
+        Поляков Владимир Иванович\par
+    \end{minipage}
+    \vfill
+    Санкт-Петербург, \the\year{}г.
+\end{titlepage}
+\section*{Значения чисел для данного варианта}
+\onehalfspacing
+$A=1883_{10}=11101011011_2$\\
+$[A]_{dir}=0000011101011011$\\
+$-[A]_{dir}=[A]_{com}=1111100010100101$\\
+\hfill\break
+$B=27_{10}=11011_2$\\
+$[B]_{dir}=00011011$\\
+$-[B]_{dir}=[B]_{com}=11100101$
+\section*{Задание}
+\large
+$A>0, B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $00000111$ & $01011011$\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}01\overset{\small{1}}{1}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11110011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1011011|0$\\
+        \\
+        $1011011|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000010
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $011011|00$\\
+        \\
+        $011011|0\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101001
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $11011|010$\\
+        \\
+        $11011|01\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        11\overset{\small{1}}{0}10\overset{\small{1}}{0}\overset{\small{1}}{1}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101110
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1011|0100$\\
+        \\
+        $1011|010\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        11\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111000
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $011|01000$\\
+        \\
+        $011|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10000\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00001011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $11|010000$\\
+        \\
+        $11|01000\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}0111\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1|0100010$\\
+        \\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}1\overset{\small{1}}{0}\overset{\small{1}}{0}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $|01000100$\\
+        \\
+        $|0100010\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C_r]_{dir}=00010100=10100_2=20_{10}$ -- остаток\\
+$[C_q]_{dir}=01000101=1000101_2=69_{10}$ -- частное\\
+$69 * 27 + 20 = 1883$ -- всё корректно\\
+\hfill\break
+$A>0, B<0$\\
+\hfill\break
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $00000111$ & $01011011$\\
+    \hline
+    \multicolumn{2}{|c|}{
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}1\\
+        1111111111100101
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        0000011101000000
+        \end{array}\\
+        \end{array}
+    $
+    }\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}01\overset{\small{1}}{1}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11110011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1000000|0$\\
+        \\
+        $1000000|\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000010
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $000000|10$\\
+        \\
+        $000000|1\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{0}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101001
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $00000|100$\\
+        \\
+        $00000|10\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        11\overset{\small{1}}{0}10\overset{\small{1}}{0}10\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101101
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0000|1010$\\
+        \\
+        $0000|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        11\overset{\small{1}}{0}\overset{\small{1}}{1}1\overset{\small{1}}{0}10\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11110101
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $000|10110$\\
+        \\
+        $000|1011\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}1\overset{\small{1}}{0}10\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000101
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $00|101110$\\
+        \\
+        $00|10111\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101111
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0|1011100$\\
+        \\
+        $0|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        11\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111001
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $|10111010$\\
+        \\
+        $|1011101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}1\overset{\small{1}}{0}\overset{\small{1}}{0}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $10111011$\\
+        \\
+        $10111011$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C_r]_{dir}=00010100=10100_2=20_{10}$ -- остаток\\
+$[C_q]_{com}=10111011$\\
+$[C_q]_{com}=-[C_q]_{dir}=-01000101=-1000101_2=-69_{10}$ -- частное\\
+$(-69) * (-27) + 20 = 1883$ -- всё корректно\\
+\hfill\break
+$A<0, B>0$\\
+\hfill\break
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $11111000$ & $10100101$\\
+    \hline
+    \multicolumn{2}{|c|}{
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        111110001\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{0}1\\
+        0000000000011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        1111100011000000
+        \end{array}\\
+        \end{array}
+    $
+    }\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10\overset{\small{1}}{0}\overset{\small{1}}{0}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00001100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1000000|0$\\
+        \\
+        $1000000|\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}01\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111110
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $000000|10$\\
+        \\
+        $000000|1\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}1100\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010111
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $00000|100$\\
+        \\
+        $00000|10\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        00\overset{\small{1}}{1}01\overset{\small{1}}{1}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0000|1010$\\
+        \\
+        $0000|101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        00\overset{\small{1}}{1}\overset{\small{1}}{0}0\overset{\small{1}}{1}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00001011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $000|10110$\\
+        \\
+        $000|1011\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}0\overset{\small{1}}{1}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $00|101110$\\
+        \\
+        $00|10111\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{1}10\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010001
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0|1011100$\\
+        \\
+        $0|101110\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        00\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000111
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $|10111010$\\
+        \\
+        $|1011101\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}0111\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $10111011$\\
+        \\
+        $10111011$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C_r]_{com}=11101100$\\
+$[C_r]_{com}=-[C_r]_{dir}=-00010100=-10100_2=-20_{10}$ -- остаток\\
+$[C_q]_{com}=10111011$\\
+$[C_q]_{com}=-[C_q]_{dir}=-01000101=-1000101_2=-69_{10}$ -- частное\\
+$(-69) * 27 - 20 = -1883$ -- всё корректно\\
+\hfill\break
+$A<0,B<0$
+\vspace*{0.3cm}
+\hfill\break
+\begin{tabular}{|c|c|}
+    \hline
+    Делимое и остаток(ст. р.) & Делимое и остаток(мл. р.)\\
+    \hline
+    $11111000$ & $10100101$\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10\overset{\small{1}}{0}\overset{\small{1}}{0}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00001100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0100101|0$\\
+        \\
+        $0100101|\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11111101
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $100101|00$\\
+        \\
+        $100101|0\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}1\overset{\small{1}}{0}\overset{\small{1}}{1}1\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010110
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $00101|010$\\
+        \\
+        $00101|01\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        00\overset{\small{1}}{1}01\overset{\small{1}}{1}\overset{\small{1}}{0}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00010001
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $0101|0100$\\
+        \\
+        $0101|010\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        00\overset{\small{1}}{1}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{1}0\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000111
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $101|01000$\\
+        \\
+        $101|0100\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}01111\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11110100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $01|010000$\\
+        \\
+        $01|01000\underline{1}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{0}1000\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        00000011
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $1|0100010$\\
+        \\
+        $1|010001\underline{0}$\\
+    \end{tabular}\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}0111\\
+        00011011
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        11101100
+        \end{array}\\
+        \end{array}
+    $ &
+    \begin{tabular}{c}
+        $01000100$\\
+        \\
+        $0100010\underline{1}$\\
+    \end{tabular}\\
+    \hline
+\end{tabular}\\
+\hfill\break
+$[C_r]_{com}=11101100$\\
+$[C_r]_{com}=-[C_r]_{dir}=-00010100=-10100_2=-20_{10}$ -- остаток\\
+$[C_q]_{dir}=01000101=1000101_2=69_{10}$ -- частное\\
+$69 * (-27) - 20 = -1883$ -- всё корректно
+\end{document}

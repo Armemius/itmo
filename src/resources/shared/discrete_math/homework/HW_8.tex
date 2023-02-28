@@ -1,0 +1,417 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[LGRgreek]{mathastext}
+\usepackage{graphicx, setspace, amsmath, longtable}
+
+\usepackage[
+top = 1.25cm,
+bottom = 2.0cm]{geometry}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+    % HEADER
+	{
+        \scshape
+        Федеральное государственное автономное образовательное учреждение высшего образования
+        \par
+        \textbf{«Научно-образовательная корпорация ИТМО»}
+        \par
+        \vspace*{1cm}
+        Факультет Программной Инженерии и Компьютерной Техники
+        \par
+    }
+    % LOGO
+    \vspace*{0.6cm}
+    \includegraphics[width=\textwidth]{logo.png}
+    % LAB INFO
+    {
+        \Large
+        \textbf{Домашняя работа по представлению чисел в ЭВМ №8}
+        \par
+        \normalsize
+        \vspace*{0.75cm}
+        \textbf{Вариант 92}
+        \par
+    }
+    \vfill
+    % СREDITS
+    \hfill\begin{minipage}{\dimexpr\textwidth-7.8cm}
+        \textbf{Выполнил:}\par
+        Степанов Арсений Алексеевич\par
+        \vspace*{0.15cm}
+        \textbf{Группа:}\par
+        P3109\par
+        \vspace*{0.15cm}
+        \textbf{Преподаватель:}\par
+        Поляков Владимир Иванович\par
+    \end{minipage}
+    \vfill
+    Санкт-Петербург, \the\year{}г.
+\end{titlepage}
+\section*{Значения чисел для данного варианта}
+\onehalfspacing
+$A=2.6_{10}\approx2.999_{16}=10.1001\;1001\;1001_2$\\
+$A_{F1}=0.1000001.0010\;1001$\\
+$A_{F2}=0.10000010.0100\;110$\\
+\hfill\break
+$B=0.063_{10}\approx0.1020_{16}=0.0001\;0000\;001_2$\\
+$B_{F1}=0.1000000.0001\;0000$\\
+$B_{F2}=0.01111101.0000\;001$
+\section*{Задание №1}
+$X_C=X_A-X_B+2^6=65_{10}=1000001_2$\\
+$P_C=1$\\
+\setlength{\LTleft}{0pt}
+\begin{longtable}{|c|c|c|}
+    \hline
+    Делимое & Делитель & Д\\
+    \hline
+    \endhead
+    $000101010$ & $00000000$ & -\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        000010101\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000000101
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $000000010$ & $10100000$ & $\rightarrow4M_A$\\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}00010\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111110010
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $111110010$ & $1010000\underline{0}$ & $\leftarrow1R$ \\
+    \hline
+    $111100101$ & $01000000$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        111100101\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111110101
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $111110101$ & $0100000\underline{0}$ & R \\
+    \hline
+    $111101010$ & $10000000$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        111101010\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111111010
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$ \\
+    \hline
+    $111111010$ & $1000000\underline{0}$ & R \\
+    \hline
+    $111110101$ & $00000000$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10101\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000000101
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $000000101$ & $0000000\underline{1}$ & R \\
+    \hline
+    $000001010$ & $00000010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}01010\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111111010
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $111111010$ & $0000001\underline{0}$ & R \\
+    \hline
+    $111110100$ & $00000100$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10100\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000000100
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $000000100$ & $0000010\underline{1}$ & R \\
+    \hline
+    $000001000$ & $00001010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}01000\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111111000
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $111111000$ & $0000101\underline{0}$ & R \\
+    \hline
+    $111110000$ & $00010100$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}\overset{\small{1}}{1}10000\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000000000
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $000000000$ & $0001010\underline{1}$ & R \\
+    \hline
+    $000000000$ & $00101010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}\overset{\small{1}}{0}00000\\
+        000010000
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111110000
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $111110000$ & $0010101\underline{0}$ & R\\
+    \hline
+\end{longtable}
+\hfill\break
+$C=0.1000010.0010\;1010$\\
+$C^*=0.2A_{16}\cdot16^2=42$\\
+$C_T=\frac{2.6}{0.063}\approx41.269841$\\
+$\Delta C=41.269841-42=-0.730158$\\
+$\delta C=\frac{|\Delta C|}{C_T}\cdot 100\%=1.769\%$\\
+\pagebreak
+\section*{Задание №2}
+$X_C=X_A-X_B+2^7=133_{10}=10000101_2$\\ 
+$P_C=5$\\
+\begin{longtable}{|c|c|c|}
+    \hline
+    Делимое & Делитель & Д\\
+    \hline
+    \endhead
+    $010100110$ & $00000000$ & - \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        0101001\overset{\small{1}}{1}0\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000100101
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $000100101$ & $0000000\underline{1}$ & R \\
+    \hline
+    $001001010$ & $00000010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}010010\overset{\small{1}}{1}0\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111001001
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $111001001$ & $0000001\underline{0}$ & R \\
+    \hline
+    $110010010$ & $00000100$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}10010010\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000010011
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $000010011$ & $0000010\underline{1}$ & R \\
+    \hline
+    $000100110$ & $00001010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}001001\overset{\small{1}}{1}0\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        110100101
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$\\
+    \hline
+    $110100101$ & $0000101\underline{0}$ & R \\
+    \hline
+    $101001010$ & $00010100$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        101001010\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111001011
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $111001011$ & $0001010\underline{0}$ & R \\
+    \hline
+    $110010110$ & $00101000$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{1}10010110\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        000010111
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $000010111$ & $0010100\underline{1}$ & R \\
+    \hline
+    $000101110$ & $01010010$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        -
+        \begin{array}{r}
+        \overset{\small{1}}{\phantom{0}}\overset{\small{1}}{0}001011\overset{\small{1}}{1}0\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        110101101
+        \end{array}\\
+        \end{array}
+    $ & & $-M_B$ \\
+    \hline
+    $110101101$ & $0101001\underline{0}$ & R \\
+    \hline
+    $101011010$ & $10100100$ & $\leftarrow1R$ \\
+    \hline
+    $
+        \begin{array}{r}
+        +
+        \begin{array}{r}
+        101011010\\
+        010000001
+        \end{array}\\
+        \hline
+        \begin{array}{r}
+        111011011
+        \end{array}\\
+        \end{array}
+    $ & & $+M_B$\\
+    \hline
+    $111011011$ & $1010010\underline{0}$ & R \\
+    \hline
+\end{longtable}
+\hfill\break
+$C=0.10000110.0100\;100$\\
+$C^*=0.10100100_{2}\cdot2^6=41$\\
+$C_T=\frac{2.6}{0.063}\approx41.269841$\\
+$\Delta C=41.269841-41=0.269842$\\
+$\delta C=\frac{|\Delta C|}{C_T}\cdot 100\%=0.653\%$\\
+\end{document}

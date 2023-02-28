@@ -6,3 +6,5 @@ declare module "*.pdf";
 declare module "*.zip";
 declare module  "*.csv";
 declare module "*.py";
+declare module "*.jar";
+declare module "*.tex";

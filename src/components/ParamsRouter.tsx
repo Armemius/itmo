@@ -6,6 +6,8 @@ import OPD from "../pages/OPD";
 import Maths from "../pages/Maths";
 import DiscreteMaths from "../pages/DiscreteMaths";
 import Main from "../pages/Main";
+import Databases from "../pages/Databases";
+import KikAndBzd from "../pages/KikAndBzd";
 
 export enum Pages {
     MAIN = "main",
@@ -16,8 +18,7 @@ export enum Pages {
     DISCRETE_MATHS = "discrete_maths",
     HISTORY = "history",
     DATABASES = "databases",
-    KIK = "kik",
-    BZD = "bzd",
+    KIK_AND_BZD = "kik_and_bzd"
 }
 
 const ParamsRouter = () => {
@@ -47,6 +48,14 @@ const ParamsRouter = () => {
         case Pages.DISCRETE_MATHS:
             return (
                 <DiscreteMaths/>
+            )
+        case Pages.DATABASES:
+            return (
+                <Databases/>
+            )
+        case Pages.KIK_AND_BZD:
+            return (
+                <KikAndBzd/>
             )
         default:
             return (
