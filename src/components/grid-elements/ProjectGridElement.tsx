@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ProjectGridElementProps {
     header: string;
-    text: string;
+    text?: string;
     children: JSX.Element | JSX.Element[];
 }
 

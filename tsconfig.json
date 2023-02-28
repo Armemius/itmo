@@ -19,11 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@resources/*": ["src/resources/shared/*"],
-      "@images/*": ["src/resources/images/*"]
-    }
+    "baseUrl": "."
   },
   "include": [
     "src"

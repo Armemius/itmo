@@ -27,14 +27,14 @@ const Main = () => {
             </div>
             <div className="main-content-header">СППО // ВТ ИТМО</div>
             <div className="main-content">
-                <Section header="I Семестр" anchor="sem1">
+                <Section header="I Семестр" anchor="sem1" lined>
                     <LinkGridElement header="Программирование" link={Pages.PROGRAMMING} img={ProgrammingImg1} />
                     <LinkGridElement header="Информатика" link={Pages.INFORMATICS} img={InformaticsImg} />
                     <LinkGridElement header="ОПД" link={Pages.OPD} img={OPDImg1} />
                     <LinkGridElement header="Математика" link={Pages.MATHS} img={MathImg1} />
                     <LinkGridElement header="Дискретная математика" link={Pages.DISCRETE_MATHS} img={DiskraImg1} />
                 </Section>
-                <Section header="II Семестр" anchor="sem2">
+                <Section header="II Семестр" anchor="sem2" lined>
                     <LinkGridElement header="Программирование" link={Pages.PROGRAMMING} img={FillerImg} />
                     <LinkGridElement header="ОПД" link={Pages.OPD} img={FillerImg} />
                     <LinkGridElement header="Математика" link={Pages.MATHS} img={FillerImg} />
@@ -43,7 +43,7 @@ const Main = () => {
                     <LinkGridElement header="КиК" link={Pages.KIK} img={FillerImg} />
                     <LinkGridElement header="БЖД" link={Pages.BZD} img={FillerImg} />
                 </Section>
-                <Section header="III Семестр" anchor="sem3">
+                <Section header="III Семестр" anchor="sem3" lined>
                     <TextGridElement header="Будет позже">
                         Осталось только дожить до следующего семестра
                     </TextGridElement>
