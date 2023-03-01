@@ -1,6 +1,5 @@
 import React from 'react';
 import InfoPageTemplate from "../components/InfoPageTemplate";
-import GridSection from "../components/grid-elements/GridSection";
 import ProjectGridElement from "../components/grid-elements/ProjectGridElement";
 
 import KikTest1 from "../resources/shared/kik/KIK_TEST_1.docx";

@@ -70,6 +70,7 @@
 
 .main-content {
     width: 90%;
+    min-height: 100vh;
     padding: 0 5% 5% 5%;
     background-color: var(--itmo-color-light);
 }
@@ -82,6 +83,25 @@
     box-shadow: 0 0 20px var(--itmo-color-dark);
     font-size: 65px;
     padding: 0 10%;
+}
+
+.main-content-description {
+    text-align: justify;
+    padding: 20px 3%;
+    font-size: 24px;
+    color: var(--itmo-color-dark);
+}
+
+.main-content-search-container {
+    padding: 20px 3%;
+    font-size: 24px;
+    color: var(--itmo-color-dark);
+}
+
+.main-content-searchbar {
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .section {
@@ -270,6 +290,10 @@
     }
 
     .ref-element-text {
+        font-size: 18px;
+    }
+
+    .main-content-description {
         font-size: 18px;
     }
 }

@@ -5,10 +5,20 @@ interface SubsectionProps {
     header: string;
     anchor?: string;
     lined?: boolean;
+    search?: string;
     children: JSX.Element | JSX.Element[];
 }
 
 const Section = (props: SubsectionProps) => {
+    let children = props.children instanceof Array ? props.children : Array.of(props.children);
+    if (props.search) {
+        children = children
+            .filter(value => value.props.hasOwnProperty("header"))
+            .filter(value => value.props.header.toLowerCase().includes(props.search!.trim().toLowerCase()));
+        if (children.length === 0) {
+            return null;
+        }
+    }
     return (
         <>
             <div className="w-fill section">
@@ -16,7 +26,7 @@ const Section = (props: SubsectionProps) => {
                     <h1 id={props.anchor}>{props.header}</h1>
                 </div>
                 <GridSection>
-                    {props.children}
+                    {children}
                 </GridSection>
             </div>
         </>
