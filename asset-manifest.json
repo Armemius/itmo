@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/itmo/static/css/main.7698edbf.css",
-    "main.js": "/itmo/static/js/main.7f9fd791.js",
+    "main.js": "/itmo/static/js/main.f82eea23.js",
     "static/media/rikardo.gif": "/itmo/static/media/rikardo.f0afc16f4c844dc234dd.gif",
     "static/media/TASK_5_DATA.csv": "/itmo/static/media/TASK_5_DATA.698b99f5e02c94495dc4.csv",
     "static/media/Euclid.pdf": "/itmo/static/media/Euclid.8d4c3a32d75aabffc750.pdf",
@@ -108,10 +108,10 @@
     "static/media/INF_LAB_3.py": "/itmo/static/media/INF_LAB_3.f86de312d876ef3bc130.py",
     "index.html": "/itmo/index.html",
     "main.7698edbf.css.map": "/itmo/static/css/main.7698edbf.css.map",
-    "main.7f9fd791.js.map": "/itmo/static/js/main.7f9fd791.js.map"
+    "main.f82eea23.js.map": "/itmo/static/js/main.f82eea23.js.map"
   },
   "entrypoints": [
     "static/css/main.7698edbf.css",
-    "static/js/main.7f9fd791.js"
+    "static/js/main.f82eea23.js"
   ]
 }
